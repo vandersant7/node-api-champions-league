@@ -1,7 +1,7 @@
-import { response } from 'express'
 import { PlayerModel } from '../models/player-model'
 import * as PlayerRepository from '../repositories/players-repository'
 import * as HttpResponse from '../utils/http-helper'
+import { StatisticsModel } from '../models/statistics-model'
 
 export const getPlayerDataService = async () => {
   const data = await PlayerRepository.findAllPlayers()
@@ -24,9 +24,9 @@ export const getPlayerByIdService = async (id: number) => {
   let response = null
 
   if (data) {
-    response = HttpResponse.ok(data)
+    response = await HttpResponse.ok(data)
   } else {
-    response = HttpResponse.noContent()
+    response = await HttpResponse.noContent()
   }
 
   return response
@@ -39,19 +39,38 @@ export const createPlayerService = async (player: PlayerModel) => {
   if (Object.keys(player).length !== 0) {
     await PlayerRepository.insertPlayer(player)
 
-    response = HttpResponse.created()
+    response = await HttpResponse.created()
   } else {
-    response = HttpResponse.badRequest()
+    response = await HttpResponse.badRequest()
   }
   return response
 }
 
 export const deletePlayerService = async (id: number) => {
-  let response = null;
-  await PlayerRepository.deleteOnePlayer(id)
+  let response = null
+  const isDeleted = await PlayerRepository.deleteOnePlayer(id)
 
-  response = HttpResponse.ok({message: "deleted"})
+  if (isDeleted) {
+    response = await HttpResponse.ok({ message: 'deleted' })
+  } else {
+    response = await HttpResponse.badRequest()
+  }
 
-  return response;
-  
+  return response
+}
+
+export const updatePlayerService = async (
+  id: number,
+  statistics: StatisticsModel
+) => {
+  const data = await PlayerRepository.findAndModifyPlayer(id, statistics)
+  let response = null
+  //tratamento de erros
+  if (Object.keys(data).length === 0) {
+    response = await HttpResponse.badRequest()
+  } else {
+    response = await HttpResponse.ok(data)
+  }
+
+  return response
 }

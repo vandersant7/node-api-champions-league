@@ -123,3 +123,25 @@ export const ok = async (data: any): Promise<HttpResponse> => {
   }
 }
 ```
+
+## PASSO: Criando a camada Service
+
+Por padrão, tudo que vem params vem como _string_, por isso a nossa IDE vai acusar erro na variável **id** que está sendo passada como parametro da função `getPlayersByIdService`. Para corrigir isso, vamos utilizar uma função nativa do JavaScript `parseInt()`.
+
+```typescript
+export const getPlayerById = async (req: Request, res: Response) => {
+  const id = req.params.id
+
+  const httpResponse = await service.getPlayerByIdService(id)
+}
+```
+
+Código após as mundaças mencionadas acima
+
+```typescript
+export const getPlayerById = async (req: Request, res: Response) => {
+  const id = parseInt(req.params.id)
+
+  const httpResponse = await service.getPlayerByIdService(id)
+}
+```

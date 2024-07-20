@@ -1,5 +1,6 @@
 import { Router } from "express";
 import * as PlayersController from "./controllers/players-controller";
+import * as ClubsController from "./controllers/clubs-controller"
 
 // Usando a notação " * as " conseguimos importar todas as funções dentro do arquivo especificado no caminho acima
 
@@ -11,5 +12,7 @@ router.patch("/players/:id", PlayersController.updatePlayers)
 
 router.get("/players/:id", PlayersController.getPlayerById)
 // No exemplo acima estamos usando uma router param "parametro de rota". Depois da "/" utilizamos ":" + o nome do parametro que iremos passar
+
+router.get("/clubs", ClubsController.getClubs)
 
 export default router

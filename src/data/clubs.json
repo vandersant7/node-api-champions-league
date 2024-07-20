@@ -1,0 +1,123 @@
+[
+    {
+      "id": 1,
+      "name": "Real Madrid"
+    },
+    {
+      "id": 2,
+      "name": "Barcelona"
+    },
+    {
+      "id": 3,
+      "name": "Manchester City"
+    },
+    {
+      "id": 4,
+      "name": "Bayern Munich"
+    },
+    {
+      "id": 5,
+      "name": "Paris Saint-Germain"
+    },
+    {
+      "id": 6,
+      "name": "Bayer Leverkusen"
+    },
+    {
+      "id": 7,
+      "name": "Milan"
+    },
+    {
+      "id": 8,
+      "name": "Liverpool"
+    },
+    {
+      "id": 9,
+      "name": "Chelsea"
+    },
+    {
+      "id": 10,
+      "name": "Juventus"
+    },
+    {
+      "id": 11,
+      "name": "Inter Milan"
+    },
+    {
+      "id": 12,
+      "name": "Atletico Madrid"
+    },
+    {
+      "id": 13,
+      "name": "Borussia Dortmund"
+    },
+    {
+      "id": 14,
+      "name": "Napoli"
+    },
+    {
+      "id": 15,
+      "name": "Sevilla"
+    },
+    {
+      "id": 16,
+      "name": "RB Leipzig"
+    },
+    {
+      "id": 17,
+      "name": "Porto"
+    },
+    {
+      "id": 18,
+      "name": "Benfica"
+    },
+    {
+      "id": 19,
+      "name": "Ajax"
+    },
+    {
+      "id": 20,
+      "name": "Tottenham Hotspur"
+    },
+    {
+      "id": 21,
+      "name": "Roma"
+    },
+    {
+      "id": 22,
+      "name": "Villarreal"
+    },
+    {
+      "id": 23,
+      "name": "Sporting CP"
+    },
+    {
+      "id": 24,
+      "name": "Shakhtar Donetsk"
+    },
+    {
+      "id": 25,
+      "name": "Salzburg"
+    },
+    {
+      "id": 26,
+      "name": "PSV Eindhoven"
+    },
+    {
+      "id": 27,
+      "name": "Olympique Lyonnais"
+    },
+    {
+      "id": 28,
+      "name": "Marseille"
+    },
+    {
+      "id": 29,
+      "name": "Club Brugge"
+    },
+    {
+      "id": 30,
+      "name": "Celtic"
+    }
+  ]
+  
